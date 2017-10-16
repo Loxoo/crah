@@ -1,0 +1,272 @@
+@font-face
+{
+    font-family: "orangesans35";
+    src: url('../fonts/orangesans35.eot') format('truetype'),
+        url('../fonts/HelvNeue35_Cyr.ttf') format('truetype');
+}
+
+@font-face
+{
+    font-family: "orangesans45";
+    src: url('../fonts/orangesans45.eot') format('truetype'),
+        url('../fonts/HelvNeue45_Cyr.ttf') format('truetype');
+}
+
+@font-face
+{
+    font-family: "orangesans55";
+    src: url('../fonts/orangesans55.eot') format('truetype'),
+        url('../fonts/HelvNeue55_Cyr.ttf') format('truetype');
+}
+
+@font-face
+{
+    font-family: "orangesans65";
+    src: url('../fonts/orangesans65.eot') format('truetype'),
+        url('../fonts/HelvNeue65_Cyr.ttf') format('truetype');
+}
+
+@font-face
+{
+    font-family: "orangesans75";
+    src: url('../fonts/orangesans75.eot'),
+        url('../fonts/HelvNeue75_Cyr.ttf') format('truetype');
+}
+
+
+
+html, body{ margin:0; padding:0; overflow:hidden; }
+body
+{
+    background: url('../images/landing-bg.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-shadow: 1px 1px 1px rgba(150, 150, 150, .4);
+}
+
+.white-popup
+{
+    position: relative;
+    background: #fbfcfc;
+    padding: 20px;
+    width: auto;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+/**************************
+** HEADER
+**************************/
+
+#app-header{ color:#fbfcfc; font-family:"orangesans55"; padding:30px 60px; }
+#app-theme{ float:left; margin-right:40px; }
+#app-title{ margin-top:12px; }
+#app-title h1{ font-size:60px; margin:0; padding:0; }
+#app-title h2{ font-size:30px; margin:0; padding:0; }
+
+.landing-error
+{
+    display:inline-block;
+    font-family:"orangesans55";
+    font-size:14px;
+    color:#000000;
+    padding:3px 5px;
+    background:#ff3322;
+    margin-top:-10px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    margin-top:4px;
+}
+
+.landing-success
+{
+    display:inline-block;
+    font-family:"orangesans55";
+    font-size:14px;
+    color:#000000;
+    padding:3px 5px;
+    background:#76b852;
+    margin-top:-10px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    margin-top:4px;
+}
+
+
+/**************************
+** HEADING
+**************************/
+
+#app-heading
+{
+    width:100%;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+}
+
+#app-heading{ color:#fbfcfc; font-family:"orangesans55"; text-align:center; margin:auto; }
+#app-heading h3{ font-family:"orangesans35"; font-size:60px;color:#fbfcfc; }
+
+#app-heading a{ color:#fbfcfc; }
+#app-heading #app-access
+{
+    -webkit-transition: background-color 200ms linear, color 200ms linear;
+    -moz-transition: background-color 200ms linear, color 200ms linear;
+    -o-transition: background-color 200ms linear, color 200ms linear;
+    -ms-transition: background-color 200ms linear, color 200ms linear;
+    transition: background-color 200ms linear, color 200ms linear;
+}
+#app-heading #app-access:hover, #app-heading #app-access:active, #app-heading #app-access:focus
+{
+    -webkit-transition: background-color 200ms linear, color 200ms linear;
+    -moz-transition: background-color 200ms linear, color 200ms linear;
+    -o-transition: background-color 200ms linear, color 200ms linear;
+    -ms-transition: background-color 200ms linear, color 200ms linear;
+    transition: background-color 200ms linear, color 200ms linear;
+
+    text-decoration:none;
+    color:#FF6600;
+    background:#fbfcfc;
+}
+
+#app-access
+{
+    display:inline-block;
+    width:480px;
+    padding:0.8em 0;
+    margin-bottom:8px;
+
+    font-size:24px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow:inset 0 0 0 3px #fbfcfc;
+    box-shadow:inset 0 0 0 3px #fbfcfc;
+}
+
+#app-access #form{ clear:both; display:block; text-align:left; max-width:80%; background:red; margin: auto; }
+#app-access label{ font-size:12px; }
+
+#app-access-request, #app-lost-password{ text-transform:uppercase; }
+
+/**************************
+** FOOTER
+**************************/
+#app-footer
+{
+    position:absolute;
+    bottom:-1px;
+    left:0;
+    right:0;
+
+    width:100%;
+    height:80px;
+    padding:0 60px;
+    line-height:78px;
+
+
+    color:#8f8f8f;
+    font-family:"orangesans55";
+    font-size:18px;
+    background:white;
+}
+
+#app-author{ display:inline-block; }
+#app-author span{ color:#FF6600; font-family:"orangesans75"; }
+#app-brands{ float:right; display:inline-block; }
+#app-brands img{ padding-left:30px; }
+
+/**************************
+** MEDIAQUERIES
+**************************/
+
+
+@media (max-width: 1366px)
+{
+    #app-header{ padding:16px 32px; }
+    #app-theme{ width:98px; margin-right:20px; }
+    #app-title h1{ font-size:40px; }
+    #app-title h2{ font-size:24px; }
+
+    #app-heading h3{ font-size:40px; }
+    #app-access{ width:320px; font-size:20px; padding:0.8em 0; }
+}
+
+@media (max-width: 768px)
+{
+    #app-author{ display:none; }
+    #app-brands{ display:block; float:none; text-align:center; }
+    #app-brands img{ padding:0 15px; }
+}
+
+/********************************
+** MAGNIFIC POPUP TRANSITIONS
+********************************/
+
+/**
+* Fade-zoom animation for first dialog
+*/
+
+/* start state */
+.my-mfp-zoom-in .zoom-anim-dialog {
+    opacity: 0;
+
+    -webkit-transition: all 0.2s ease-in-out; 
+    -moz-transition: all 0.2s ease-in-out; 
+    -o-transition: all 0.2s ease-in-out; 
+    transition: all 0.2s ease-in-out; 
+
+
+
+    -webkit-transform: scale(0.8); 
+    -moz-transform: scale(0.8); 
+    -ms-transform: scale(0.8); 
+    -o-transform: scale(0.8); 
+    transform: scale(0.8); 
+}
+
+/* animate in */
+.my-mfp-zoom-in.mfp-ready .zoom-anim-dialog {
+    opacity: 1;
+
+    -webkit-transform: scale(1); 
+    -moz-transform: scale(1); 
+    -ms-transform: scale(1); 
+    -o-transform: scale(1); 
+    transform: scale(1); 
+}
+
+/* animate out */
+.my-mfp-zoom-in.mfp-removing .zoom-anim-dialog {
+    -webkit-transform: scale(0.8); 
+    -moz-transform: scale(0.8); 
+    -ms-transform: scale(0.8); 
+    -o-transform: scale(0.8); 
+    transform: scale(0.8); 
+
+    opacity: 0;
+}
+
+/* Dark overlay, start state */
+.my-mfp-zoom-in.mfp-bg {
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease-out; 
+    -moz-transition: opacity 0.3s ease-out; 
+    -o-transition: opacity 0.3s ease-out; 
+    transition: opacity 0.3s ease-out;
+}
+/* animate in */
+.my-mfp-zoom-in.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+/* animate out */
+.my-mfp-zoom-in.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+
+.modal-backdrop {
+    z-index: -1;
+}
