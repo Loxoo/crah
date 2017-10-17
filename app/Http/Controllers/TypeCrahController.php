@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\TypeCrahRequest;
 
 use App\Http\Requests;
 
@@ -34,7 +35,7 @@ class TypeCrahController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TypeCrahRequest $request)
     {
         //
     }
@@ -68,7 +69,7 @@ class TypeCrahController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TypeCrahRequest $request, $id)
     {
         //
     }

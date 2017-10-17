@@ -12,7 +12,7 @@
         {!! Html::style('css/main.css') !!}
     </head>
 
-    <body>
+    <body> 
         <!-- ici espace pour le header-->
         @yield('header')
 

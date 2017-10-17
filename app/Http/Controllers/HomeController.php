@@ -13,7 +13,8 @@ class HomeController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        return view('home.index');
+        $test = 'bite';
+        return view('home.index', compact('test'));
     }
 
     /**
