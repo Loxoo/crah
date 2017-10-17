@@ -13,11 +13,16 @@
     </head>
 
     <body>
-        <!-- ici espace pour le header-->
-        @yield('header')
+	    <!-- ici espace pour le header-->
+	    @yield('header')
+    	<section class="container-fluid">
+    		<div class="row justify-content-md-center">
+				<div class="col-8">
+			        @yield('content')
 
-        @yield('content')
-
+				</div>	
+    		</div>
+    	</section>
     </body>
 
     @yield('footer')
