@@ -5,19 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Http\Requests\UserRequest;
-
 use App\Http\Requests;
 
-class UserController extends Controller
-{
+class UserController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index() {
+        $listUsers = User::all();
+        return view('users.index', compact('listUsers'));
     }
 
     /**
@@ -25,8 +24,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
     }
 
@@ -36,8 +34,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UserRequest $request)
-    {
+    public function store(UserRequest $request) {
         //
     }
 
@@ -47,8 +44,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         //
     }
 
@@ -58,9 +54,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit($id) {
+        $user = User::find($id);
+        $listTeam = \App\Team::orderBy('name', 'asc')->pluck('name', 'id');
+        $listRole = \App\Role::orderBy('name', 'asc')->pluck('name', 'id');
+        
+        return view('users.edit', compact('listTeam','listRole','user'));
     }
 
     /**
@@ -70,9 +69,8 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UserRequest $request, $id)
-    {
-        //
+    public function update(UserRequest $request, $id) {
+        
     }
 
     /**
@@ -81,8 +79,8 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         //
     }
+
 }
