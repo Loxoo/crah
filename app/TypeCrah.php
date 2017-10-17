@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Role extends Model {
+class TypeCrah extends Model {
 
     /**
      * The attributes that are mass assignable.
@@ -15,8 +15,8 @@ class Role extends Model {
         'name',
     ];
 
-    public function user() {
-        return $this->hasMany('App\User');
+    public function crah() {
+        return $this->hasMany('App\Crah');
     }
 
 }

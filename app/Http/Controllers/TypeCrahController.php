@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Role;
-use App\Http\Requests\RoleRequest;
 
 use App\Http\Requests;
 
-class RoleController extends Controller
+class TypeCrahController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +15,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //s
+        //
     }
 
     /**
@@ -36,7 +34,7 @@ class RoleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(RoleRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -70,7 +68,7 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(RoleRequest $request, $id)
+    public function update(Request $request, $id)
     {
         //
     }
