@@ -17,4 +17,9 @@ Route::get('/', function () {
 
 Route::auth();
 
+//route pour HOME
 Route::get('home',['as' => 'home.index' , 'uses' => 'HomeController@index']);
+
+
+
+
