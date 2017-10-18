@@ -25,7 +25,10 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        //
+        $listTeam = \App\Team::orderBy('name', 'asc')->pluck('name', 'id');
+        $listRole = \App\Role::orderBy('name', 'asc')->pluck('name', 'id');
+
+        return view('users.create', compact('listTeam', 'listRole'));
     }
 
     /**
@@ -35,7 +38,11 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(UserRequest $request) {
-        //
+        $user = new user;
+        $data = $request->all();
+        $user->fill($data)->save();
+        
+        return redirect()->route('users.index');
     }
 
     /**
@@ -72,12 +79,11 @@ class UserController extends Controller {
     public function update(UserRequest $request, $id) {
         $user = User::find($id);
         $data = $request->all();
-        
         $user->fill($data)->save();
 
         return redirect()->route('users.index');
     }
-    
+
     /**
      * Remove the specified resource from storage.
      *

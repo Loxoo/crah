@@ -1,6 +1,7 @@
 @extends('master')
 
 @section('content')
+<h1 class="mb-4">Edition de l'utilisateur {{ $user->fullname }}</h1>
 
 {{ Form::open(['route' => ['users.update',$user->id], 'method' => 'post']) }}
 <div>
