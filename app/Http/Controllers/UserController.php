@@ -58,8 +58,8 @@ class UserController extends Controller {
         $user = User::find($id);
         $listTeam = \App\Team::orderBy('name', 'asc')->pluck('name', 'id');
         $listRole = \App\Role::orderBy('name', 'asc')->pluck('name', 'id');
-        
-        return view('users.edit', compact('listTeam','listRole','user'));
+
+        return view('users.edit', compact('listTeam', 'listRole', 'user'));
     }
 
     /**
@@ -70,9 +70,14 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(UserRequest $request, $id) {
+        $user = User::find($id);
+        $data = $request->all();
         
-    }
+        $user->fill($data)->save();
 
+        return redirect()->route('users.index');
+    }
+    
     /**
      * Remove the specified resource from storage.
      *

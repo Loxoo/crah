@@ -23,5 +23,6 @@ Route::get('home',['as' => 'home.index' , 'uses' => 'HomeController@index']);
 //route pour USER
 Route::get('user',['as' => 'users.index' , 'uses' => 'UserController@index']);
 Route::get('user/modification/{id}',['as' => 'users.edit' , 'uses' => 'UserController@edit']);
+Route::post('user/update/{id}',['as' => 'users.update' , 'uses' => 'UserController@update']);
 
 

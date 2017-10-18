@@ -21,7 +21,7 @@
             <td>{{ $record->email }}</td>
             <td>{{ $record->role->name }}</td>
             <td>{{ $record->team->name }}</td>
-            <td>{{ Form::open(['route' => ['users.edit',$record->id], 'method' => 'get'])}}
+            <td>{{ Form::open(['route' => ['users.edit',$record->id], 'method' => 'get']) }}
                 {{ Form::submit('Editer',['class' => 'btn btn-primary col']) }}
                 {{ Form::close() }}
             </td>
