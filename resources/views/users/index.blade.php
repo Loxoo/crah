@@ -5,7 +5,7 @@
 	<div class="col">
 		<h1 class="mb-4">Liste des utilisateurs</h1>
 		<table class="table">
-		    <thead class="thead-inverse">
+		    <thead class="thead-inverse p-1">
 		        <tr>
 		            <th>#</th>
 		            <th>Nom</th>
