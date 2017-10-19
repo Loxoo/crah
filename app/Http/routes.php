@@ -23,9 +23,9 @@ Route::get('home',['as' => 'home.index' , 'uses' => 'HomeController@index']);
 //route pour USER
 Route::get('user',['as' => 'users.index' , 'uses' => 'UserController@index']);
 
-Route::get('user/modification/{id}',['as' => 'users.edit' , 'uses' => 'UserController@edit']);
+Route::put('user/modification/{id}',['as' => 'users.edit' , 'uses' => 'UserController@edit']);
 Route::post('user/update/{id}',['as' => 'users.update' , 'uses' => 'UserController@update']);
 
-Route::get('user/creation',['as' => 'users.create' , 'uses' => 'UserController@create']);
+Route::put('user/creation',['as' => 'users.create' , 'uses' => 'UserController@create']);
 Route::post('user/store',['as' => 'users.store' , 'uses' => 'UserController@store']);
 

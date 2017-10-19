@@ -4,7 +4,7 @@
 <div class="row mt-3">
     <div class="col">
         <h1 class="mb-4">Liste des utilisateurs</h1>
-        {{ Form::open(['route' => ['users.create'], 'method' => 'get'])}}
+        {{ Form::open(['route' => ['users.create'], 'method' => 'put'])}}
         {{ Form::button('<i class="fa fa-plus" aria-hidden="true"></i>',['type' => 'submit', 'class' => 'btn btn-dark float-right']) }}
         {{ Form::close() }}
         <table class="table">
@@ -27,7 +27,7 @@
                     <td>{{ $record->role->name }}</td>
                     <td>{{ $record->team->name }}</td>
                     <td class="text-center">
-                        {{ Form::open(['route' => ['users.edit',$record->id], 'method' => 'get'])}}
+                        {{ Form::open(['route' => ['users.edit',$record->id], 'method' => 'put'])}}
                         {{ Form::button('<i class="fa fa-pencil" aria-hidden="true"></i>',['type' => 'submit', 'class' => 'btn btn-dark']) }}
                         {{ Form::close() }}
                     </td>
