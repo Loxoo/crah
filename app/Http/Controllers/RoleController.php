@@ -5,19 +5,34 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Role;
 use App\Http\Requests\RoleRequest;
-
+use DB;
+use App\Http\Controllers\Controller;
 use App\Http\Requests;
 
 class RoleController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a role listing.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //s
+        $listRoles = DB::table('roles')->where('is_active', '>', 0)->get();
+
+        return view('roles.index', compact('listRoles'));
+    }
+
+    /**
+     * Display all deleted roles.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function deleted()
+    {
+        $listRoles = DB::table('roles')->where('is_active', '<', 1)->get();
+
+        return view('roles.deleted', compact('listRoles'));
     }
 
     /**
@@ -27,7 +42,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        return view('roles.create');
     }
 
     /**
@@ -38,7 +53,12 @@ class RoleController extends Controller
      */
     public function store(RoleRequest $request)
     {
-        //
+        $role = new role;
+        $data = $request->all();
+        $data['is_active']=1;
+        $role->fill($data)->save();
+
+        return redirect()->route('roles.index')->with('message', 'Rôle "'.$role->name.'" créé avec succès.');
     }
 
     /**
@@ -60,7 +80,10 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $role = Role::find($id);
+
+        return view('roles.edit', compact('role'));
+
     }
 
     /**
@@ -72,7 +95,11 @@ class RoleController extends Controller
      */
     public function update(RoleRequest $request, $id)
     {
-        //
+        $role = Role::find($id);
+        $data = $request->all();
+        $role->fill($data)->save();
+
+        return redirect()->route('roles.index')->with('message', 'Modifications enregistrées avec succès.');
     }
 
     /**
@@ -84,5 +111,37 @@ class RoleController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Update the specified resource in storage and set its is_active to 0.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function delete($id)
+    {
+        $role = Role::find($id);
+        DB::table('roles')
+            ->where('id', $id)
+            ->update(['is_active' => 0]);
+        return redirect()->route('roles.index')->with('message', 'Suppression du rôle "'.$role->name.'" effectuée avec succès.');
+    }
+
+    /**
+     * Update the specified resource in storage and set its is_active to 1.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function revert($id)
+    {
+        $role = Role::find($id);
+        DB::table('roles')
+            ->where('id', $id)
+            ->update(['is_active' => 1]);
+        return redirect()->route('roles.deleted')->with('message', 'Rôle "'.$role->name.'" à nouveau disponible.');
     }
 }
